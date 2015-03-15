@@ -25,6 +25,7 @@ EXPOSE 3690
 
 RUN mkdir /etc/service/svn
 ADD svn.sh /etc/service/svn/run
+RUN chmod u+x /etc/service/svn/run
 
 RUN mkdir -p /var/svn
 RUN svnadmin create /var/svn/$SVN_REPONAME
