@@ -29,6 +29,7 @@ RUN chmod u+x /etc/service/svn/run
 
 RUN mkdir -p /var/svn
 RUN svnadmin create /var/svn/$SVN_REPONAME
+RUN echo "anon-access = write" >> /var/svn/$SVN_REPONAME/conf/svnserve.conf
 
 # To store the data outside the container, mount /svn as a data volume
 VOLUME /svn
